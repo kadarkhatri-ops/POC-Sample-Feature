@@ -16,7 +16,8 @@ function App() {
 
   const fetchMonths = async () => {
     try {
-      const response = await axios.get('/api/reports/months');
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const response = await axios.get(`${apiUrl}/api/reports/months`);
       setMonths(response.data.months);
       if (response.data.months.length > 0) {
         setSelectedMonth(response.data.months[0]);
@@ -34,7 +35,8 @@ function App() {
     setError(null);
 
     try {
-      const response = await axios.get('/api/reports/sales', {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const response = await axios.get(`${apiUrl}/api/reports/sales`, {
         params: {
           year: selectedMonth.year,
           month: selectedMonth.month,

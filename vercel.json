@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "buildCommand": "npm install --prefix client && npm run build --prefix client",
+  "outputDirectory": "client/build",
+  "env": {
+    "REACT_APP_API_URL": "@react_app_api_url",
+    "DB_HOST": "@db_host",
+    "DB_USER": "@db_user",
+    "DB_PASS": "@db_pass",
+    "DB_NAME": "@db_name"
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "http://localhost:5000/api/:path*"
+    }
+  ]
+}
