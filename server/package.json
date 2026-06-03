@@ -1,0 +1,16 @@
+{
+  "name": "strata-reports-server",
+  "version": "1.0.0",
+  "description": "Reports API server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3"
+  }
+}
